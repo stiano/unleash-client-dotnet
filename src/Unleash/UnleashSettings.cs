@@ -94,7 +94,11 @@ namespace Unleash
         /// Default: An implementation based on System.Threading.Timers
         /// </summary>
         public IUnleashScheduledTaskManager ScheduledTaskManager { get; set; } = new SystemTimerScheduledTaskManager();
-
+        
+        /// <summary>
+        /// Determines whether or not to immediately load the feature toggles from the Unleash API upon initialization.
+        /// </summary>
+        public bool LoadTogglesImmediately { get; set; } = false;
 
         /// <summary>
         /// INTERNAL: Gets or sets an api client instance. Can be used for testing/mocking etc.
@@ -104,7 +108,7 @@ namespace Unleash
         /// <summary>
         /// INTERNAL: Gets or sets the file system abstraction. Can be used for testing/mocking etc.
         /// </summary>
-        internal IFileSystem FileSystem { get; set; } 
+        internal IFileSystem FileSystem { get; set; }        
 
         private static string GetSdkVersion()
         {

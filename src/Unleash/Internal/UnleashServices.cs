@@ -54,6 +54,11 @@ namespace Unleash
                     InstanceTag = settings.InstanceTag,
                     CustomHttpHeaders = settings.CustomHttpHeaders
                 });
+                if (settings.LoadTogglesImmediately)
+                {
+                    var toggles = apiClient.FetchToggles("", CancellationToken.None);
+                    ToggleCollection.Instance = toggles.Result.ToggleCollection;
+                }
             }
             else
             {
@@ -78,8 +83,7 @@ namespace Unleash
                 ExecuteDuringStartup = true,
                 Interval = settings.FetchTogglesInterval,
                 Etag = cachedFilesResult.InitialETag
-            };
-
+            };            
 
             var scheduledTasks = new List<IUnleashScheduledTask>(){
                 fetchFeatureTogglesTask
