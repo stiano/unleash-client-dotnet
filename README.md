@@ -36,7 +36,7 @@ Install the latest version of `Unleash.FeatureToggle.Client` from [nuget.org](ht
 
 ### Create a new a Unleash instance
 
-It is easy to get a new instance of Unleash. In your app you typically *just want one instance of Unelash*, and inject that where you need it. You will typically use a dependency injection frameworks to manage this. 
+It is easy to get a new instance of Unleash. In your app you typically *just want one instance of Unleash*, and inject that where you need it. You will typically use a dependency injection frameworks to manage this. 
 
 To create a new instance of Unleash you need to pass in a settings object:
 ```csharp
