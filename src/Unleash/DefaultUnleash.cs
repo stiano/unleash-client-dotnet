@@ -55,6 +55,15 @@ namespace Unleash
             return CheckIsEnabled(toggleName, services.ContextProvider.Context, defaultSetting);
         }
 
+        /// <inheritdoc />
+        public bool IsEnabled(string toggleName, Dictionary<string, string> properties, bool defaultSetting = false)
+        {
+            var context = services.ContextProvider.Context.Clone();
+            context.AppendProperties(properties);
+
+            return CheckIsEnabled(toggleName, context, defaultSetting);
+        }
+
         private bool CheckIsEnabled(string toggleName, UnleashContext context, bool defaultSetting)
         {
             var featureToggle = services.ToggleCollection.Instance.GetToggleByName(toggleName);
