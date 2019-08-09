@@ -13,23 +13,18 @@ namespace Unleash
         public string UserId { get; set; }
         public string SessionId { get; set; }
         public string RemoteAddress { get; set; }
-        public Dictionary<string, string> Properties { get; set; }
+        public Dictionary<string, string> Properties { get; set; } = new Dictionary<string, string>();
 
         /// <summary>
         /// Appends the given properties to the <see cref="Properties"/> property.
-        /// Throws an <see cref="ArgumentException"/> if the key of a property is already in the <see cref="Properties"/> property.
+        /// Replaces the value of the property if a property with the same key already exists.
         /// </summary>
         /// <param name="properties"></param>
         internal void AppendProperties(Dictionary<string, string> properties)
         {
             foreach (var property in properties)
             {
-                if (Properties.ContainsKey(property.Key))
-                {
-                    throw new ArgumentException($"A property with the key: {property.Key} already exists in {nameof(Properties)}", nameof(properties));
-                }
-
-                Properties.Add(property.Key, property.Value);
+                Properties[property.Key] = property.Value;
             }
         }
 
