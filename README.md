@@ -2,6 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/x8xuyffpjc60keqg?svg=true)](https://ci.appveyor.com/project/stiano/unleash-client-dotnet)
 [![NuGet](https://img.shields.io/nuget/v/Unleash.FeatureToggle.Client.svg)](https://www.nuget.org/packages/Unleash.FeatureToggle.Client/)
+<a href="https://www.buymeacoffee.com/stiano" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="float: right; height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
 
 ## Introduction
 
